@@ -75,8 +75,7 @@ public class UploadServlet extends HttpServlet {
 		String fileName = null;
 		for(String item: splitedHeader) {
 			if(item.trim().startsWith("filename")) {
-				int equalsIndex = item.indexOf('=');
-				fileName = item.substring(equalsIndex+1).replaceAll("\"", "");
+				fileName = item.substring(item.indexOf('"')).replaceAll("\"", "");
 			}
 		}
 
