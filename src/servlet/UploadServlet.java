@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import util.ServletUtil;
+
 /**
  * Servlet implementation class UploadServlet
  */
@@ -36,8 +38,14 @@ public class UploadServlet extends HttpServlet {
 		Part part = request.getPart("file");
 		String fileName = extractFileName(part);
 
+		boolean isError = false;
+
 		if(fileName.equals("")) {
 			System.out.println("アップロード失敗---ファイルを選択されていない");
+			isError = true;
+			request.setAttribute("isError", isError);
+			ServletUtil.forward(request, response, ServletUtil.JSP_UPLOAD);
+
 		}else {
 			part.write(PATH_UPLOAD + fileName);
 			System.out.println("アップロード成功---" + PATH_UPLOAD + fileName);
