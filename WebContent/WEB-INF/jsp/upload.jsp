@@ -15,7 +15,7 @@
 	</c:if>
 
 	<form method="POST" enctype="multipart/form-data" action="/FileDLUL/UploadServlet">
-		<input type="file" name="file" /><br />
+		<input type="file" name="file" /><br /><br />
 		<input type="submit" value="アップロード" />
 	</form>
 

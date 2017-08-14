@@ -13,6 +13,8 @@ public class ServletUtil {
 
 	public static final String JSP_DOWNLOAD = "/WEB-INF/jsp/download.jsp";
 
+	public static final String JSP_COMPLETE = "/WEB-INF/jsp/complete.jsp";
+
 	public static void forward(HttpServletRequest request, HttpServletResponse response, String jspName)
 			throws ServletException, IOException {
 		RequestDispatcher dispatcher = request.getRequestDispatcher(jspName);

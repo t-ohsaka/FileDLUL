@@ -45,10 +45,12 @@ public class UploadServlet extends HttpServlet {
 			isError = true;
 			request.setAttribute("isError", isError);
 			ServletUtil.forward(request, response, ServletUtil.JSP_UPLOAD);
-
 		}else {
 			part.write(PATH_UPLOAD + fileName);
 			System.out.println("アップロード成功---" + PATH_UPLOAD + fileName);
+
+			request.setAttribute("fileName", fileName);
+			ServletUtil.forward(request, response, ServletUtil.JSP_COMPLETE);
 		}
 	}
 
