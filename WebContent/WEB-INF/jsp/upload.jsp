@@ -9,7 +9,7 @@
 <body>
 	<h1>アップロード</h1>
 
-	<form method="POST" enctype="multipart/form-data" action="">
+	<form method="POST" enctype="multipart/form-data" action="/FileDLUL/UploadServlet">
 		<input type="file" name="file" /><br />
 		<input type="submit" value="アップロード" />
 	</form>
