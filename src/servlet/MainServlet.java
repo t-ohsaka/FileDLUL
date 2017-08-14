@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/MainServlet")
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
+	public static final String JSP_UPLOAD = "/WEB-INF/jsp/upload.jsp";
+
+	public static final String JSP_DOWNLOAD = "/WEB-INF/jsp/download.jsp";
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -33,6 +38,7 @@ public class MainServlet extends HttpServlet {
 		switch(format) {
 			case "up":
 				System.out.println("アップロードボタン押下");
+				forward(request, response, JSP_UPLOAD);
 				break;
 
 			case "down":
@@ -53,6 +59,12 @@ public class MainServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+	}
+
+	private void forward(HttpServletRequest request, HttpServletResponse response, String jspName)
+			throws ServletException, IOException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher(jspName);
+	    dispatcher.forward(request, response);
 	}
 
 }
