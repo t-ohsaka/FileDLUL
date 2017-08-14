@@ -10,10 +10,12 @@
 	<h1>UL/DL</h1>
 
 	<form method="get" action="/FileDLUL/MainServlet">
+		<input type="hidden" name="format" value="up" />
 		<input type="submit" value="ファイルをアップロード"/>
 	</form>
 
 	<form method="get" action="/FileDLUL/MainServlet">
+		<input type="hidden" name="format" value="down" />
 		<input type="submit" value="ファイルをダウンロード"/>
 	</form>
 </body>
