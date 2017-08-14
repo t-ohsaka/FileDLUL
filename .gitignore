@@ -12,3 +12,5 @@
 .project
 .classpath
 .settings
+
+/WebContent/WEB-INF/upload/
