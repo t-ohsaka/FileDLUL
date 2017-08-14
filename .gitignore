@@ -1,0 +1,14 @@
+/.apt_generated/
+/build/
+
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Eclipse
+.project
+.classpath
+.settings
