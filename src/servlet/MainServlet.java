@@ -50,7 +50,6 @@ public class MainServlet extends HttpServlet {
 				break;
 		}
 
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
